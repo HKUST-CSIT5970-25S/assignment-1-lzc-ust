@@ -47,6 +47,20 @@
 
 3. (1 mark) Run your measurement tool on general purpose `t2.micro`, `t2.medium`, and `c5d.large` Linux instances, respectively, and find the performance differences among these instances. Launch all the instances in the **US East (N. Virginia)** region. Does the performance of EC2 instances increase commensurate with the increase of the number of vCPUs and memory resource?
 
+    **Analyze Performance Differences**
+
+    - CPU Performance:
+      - t2.micro and t2.medium have similar CPU performance, with 881.73/s and 887.67/s respectively.
+      - c5d.large has lower CPU performance at 476.97/s, which might be due to its optimization for specific high-performance computing tasks rather than general CPU benchmarks.
+    - Memory Performance:
+      - t2.micro and t2.medium have similar memory performance, with 19018.10/s and 19075.94/s respectively.
+      - c5d.large shows significantly higher memory performance at 20782.97/s, indicating better efficiency in memory operations.
+
+    **Conclusion**
+
+    - **CPU Performance**: The performance of t2.micro and t2.medium instances is similar, while c5d.large shows lower performance in this specific CPU benchmark.
+    - **Memory Performance**: c5d.large demonstrates significantly higher memory performance compared to t2.micro and t2.medium.
+  
     In order to answer this question, you need to complete the following table by filling out blanks with the measurement results corresponding to each instance type.
 
     | Size        | CPU performance | Memory performance |
