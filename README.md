@@ -77,14 +77,23 @@
 
     | Type                      | TCP b/w (Mbps) | RTT (ms) |
     | ------------------------- | -------------- | -------- |
-    | `t3.medium` - `t3.medium` |     42400      |  0.0265  |
+    | `t3.medium` - `t3.medium` |     10200      |  1.127   |
     | `m5.large` - `m5.large`   |     49700      |  0.298   |
-    | `c5n.large` - `c5n.large` |                |          |
-    | `t3.medium` - `c5n.large` |                |          |
-    | `m5.large` - `c5n.large`  |                |          |
-    | `m5.large` - `t3.medium`  |                |          |
+    | `c5n.large` - `c5n.large` |     49600      |  0.289   |
+    | `t3.medium` - `c5n.large` |     10200      |  0.774   |
+    | `m5.large` - `c5n.large`  |     49600      |  0.707   |
+    | `m5.large` - `t3.medium`  |     10200      |  1.106   |
 
     > Region: US East (N. Virginia). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI. Note: Use private IP address when using iPerf within the same region. You'll need iPerf for measuring TCP bandwidth and Ping for measuring Round-Trip time.
+
+    **Analysis:**
+
+    - **TCP Bandwidth**:
+      - `m5.large` and `c5n.large` instances show significantly higher TCP bandwidth compared to `t3.medium` instances.
+      - The bandwidth between `m5.large` and `c5n.large` instances is almost the same, indicating similar network performance capabilities.
+    - **Round-Trip Time (RTT)**:
+      - `m5.large` and `c5n.large` instances have much lower RTT compared to `t3.medium` instances, indicating faster response times.
+      - The RTT between instances of the same type is generally lower than between different types, except for `t3.medium` instances which have higher RTT overall.
 
 2. (1 mark) What about the network performance for instances deployed in different regions? In order to answer this question, you need to complete the following table.
 
