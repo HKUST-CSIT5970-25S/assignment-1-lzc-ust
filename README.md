@@ -5,9 +5,9 @@
 
 ---
 
-### Name: 
-### Student Id: 
-### Email: 
+### Name: LI, Zhicheng
+### Student Id: 21133094
+### Email: zlijw@connect.ust.hk
 
 ---
 
