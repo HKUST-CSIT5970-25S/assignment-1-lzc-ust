@@ -16,8 +16,36 @@
 1. (1 mark) Report the name of measurement tool used in your measurements (you are free to choose *any* open source measurement software as long as it can measure CPU and memory performance). Please describe your configuration of the measurement tool, and explain why you set such a value for each parameter. Explain what the values obtained from measurement results represent (e.g., the value of your measurement result can be the execution time for a scientific computing task, a score given by the measurement tools or something else).
 
     > Your answer goes here.
+    1. **Measurement Tool**:
+    
+       - **Name**: **Sysbench**, a popular open-source benchmarking tool that can measure CPU and memory performance.
+    
+    2. **Configuration of the Measurement Tool**:
+    
+       - CPU Performance:
+         - Command: `sysbench cpu --cpu-max-prime=20000 run`
+         - **Explanation**: The `--cpu-max-prime` parameter sets the maximum prime number up to which the CPU performance will be tested. A higher value increases the workload, providing a more comprehensive performance measurement.
+       - Memory Performance:
+         - Command: `sysbench memory --memory-block-size=1M --memory-total-size=10G run`
+         - **Explanation**: The `--memory-block-size` parameter sets the size of the memory blocks to be allocated, and `--memory-total-size` sets the total amount of memory to be tested. These values ensure that the memory performance is tested under significant load.
+    
+    3. **Explanation of Measurement Results**:
+    
+       - CPU Performance:
+    
+         - The result will include metrics like the total execution time and the number of events per second. These values represent how efficiently the CPU can handle computational tasks.
+    
+         ![CPU](https://github.com/user-attachments/assets/f9b238c4-3b4b-42d8-8f27-131910e1926f)
 
-2. (1 mark) Run your measurement tool on general purpose `t2.micro`, `t2.medium`, and `c5d.large` Linux instances, respectively, and find the performance differences among these instances. Launch all the instances in the **US East (N. Virginia)** region. Does the performance of EC2 instances increase commensurate with the increase of the number of vCPUs and memory resource?
+    
+       - Memory Performance:
+    
+         - The result will include metrics like the total amount of transferred data and the transfer rate. These values indicate the speed and efficiency of memory operations.
+    
+         ![memory](https://github.com/user-attachments/assets/c8c89bfb-ee87-4ff0-bdce-d8c11ad244fc)
+
+
+3. (1 mark) Run your measurement tool on general purpose `t2.micro`, `t2.medium`, and `c5d.large` Linux instances, respectively, and find the performance differences among these instances. Launch all the instances in the **US East (N. Virginia)** region. Does the performance of EC2 instances increase commensurate with the increase of the number of vCPUs and memory resource?
 
     In order to answer this question, you need to complete the following table by filling out blanks with the measurement results corresponding to each instance type.
 
