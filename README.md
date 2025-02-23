@@ -99,8 +99,22 @@
 
     | Connection                | TCP b/w (Mbps) | RTT (ms) |
     | ------------------------- | -------------- | -------- |
-    | N. Virginia - Oregon      |                |          |
+    | N. Virginia - Oregon      |       504      |  62.866  |
     | N. Virginia - N. Virginia |      49700     |  0.217   |
-    | Oregon - Oregon           |                |          |
+    | Oregon - Oregon           |      95300     |  0.102   |
  
     > Region: US East (N. Virginia), US West (Oregon). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI. All instances are `c5.large`. Note: Use public IP address when using iPerf within the same region.
+
+    **Analysis:**
+
+    - **TCP Bandwidth**:
+      - The TCP bandwidth between instances in the same region (N. Virginia - N. Virginia and Oregon - Oregon) is significantly higher compared to instances in different regions (N. Virginia - Oregon).
+      - The highest bandwidth is observed between instances in Oregon, followed by N. Virginia.
+    - **Round-Trip Time (RTT)**:
+      - The RTT is much lower for instances within the same region compared to instances in different regions.
+      - The RTT between N. Virginia and Oregon is considerably higher, indicating longer latency due to the geographical distance.
+    
+    **Conclusion:**
+    
+    - **Intra-region performance**: Instances within the same region exhibit high TCP bandwidth and low RTT, indicating efficient and fast network performance.
+    - **Inter-region performance**: Instances across different regions show lower TCP bandwidth and higher RTT, reflecting the impact of geographical distance on network performance.
